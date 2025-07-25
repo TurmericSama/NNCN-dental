@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import { Box, Toolbar, AppBar } from "@mui/material";
+import { Toolbar, AppBar } from "@mui/material";
 
 interface NavigationProps {
   children?: React.ReactNode;

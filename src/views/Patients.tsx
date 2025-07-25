@@ -1,12 +1,10 @@
 import { useCallback, type FC } from "react";
 import { Box, Button, Typography } from "@mui/material";
-import NewPatientDialog from "@components/NewPatientDialog";
 import {
   DataGrid,
   type GridColDef,
   type GridRowParams,
 } from "@mui/x-data-grid";
-import useToggle from "@lib/useToggle";
 import { useNavigate, Link } from "react-router";
 import AddIcon from "@mui/icons-material/Add";
 
@@ -51,12 +49,6 @@ const columnVisibilityModel = {
 };
 
 const PatientsView: FC = () => {
-  const [open, toggleOpen] = useToggle();
-  const onSave = (data: any) => {
-    // Handle save logic here
-    console.log("New patient data:", data);
-  };
-
   const navigate = useNavigate();
 
   const handleRowClick = useCallback(
@@ -120,7 +112,6 @@ const PatientsView: FC = () => {
           hideFooterPagination
         />
       </Box>
-      <NewPatientDialog open={open} onClose={toggleOpen} onSave={onSave} />
     </Box>
   );
 };
